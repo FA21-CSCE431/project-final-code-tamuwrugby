@@ -62,6 +62,20 @@ Organization members will have access to organization email that will act as the
 
 The Github link will be provided to the customer. The customer will be guided through creating their own Heroku account. The customer will use the github link to deploy the application using their account. The customer can then configure the link to the site according to their wishes. 
 
+Setup a Heroku account: https://signup.heroku.com/
+
+From the heroku dashboard select New -> Create New Pipline
+Name the pipeline, and link the respective git repo to the pipline
+Our application does not need any extra options, so select Enable Review Apps right away
+Click New app under review apps, and link your test branch from your repo
+Under staging app, select Create new app and link your main branch from your repo
+To add enviornment variables to enable google oauth2 functionality, head over to the settings tab on the pipeline dashboard
+Scroll down until Reveal config vars
+Add both your client id and your secret id, with fields GOOGLE_OAUTH_CLIENT_ID and GOOGLE_OAUTH_CLIENT_SECRET respectively
+Now once your pipeline has built the apps, select Open app to open the app
+With the staging app, if you would like to move the app to production, click the two up and down arrows and select Move to production
+And now your application is setup and in production mode!
+
 ## Environmental Variables/Files ##
 
 Google OAuth2 support requires two keys to function as intended: Client ID and Client Secret
